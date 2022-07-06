@@ -1,0 +1,7 @@
+{
+  "name": "ionic-react_prac",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
