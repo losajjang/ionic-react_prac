@@ -2,19 +2,26 @@
 http://ionicframework.com/docs/theming/ */
 
 /* custom */
-.borderline {
+.item-list:not(:last-child) {
   border-color: #403e39;
   border-width: thin;
   border-style: solid;
   border-radius: 3px;
-  margin-bottom: 0px;
+  margin: 8px 8px 8px 8px;
 }
-.borderline:not(:last-child) {
+.item-list {
   border-color: #403e39;
   border-width: thin;
   border-style: solid;
   border-radius: 3px;
-  margin-bottom: 8px;
+  margin: 8px 8px 20px 8px;
+}
+.item-list-margin {
+  border-color: #403e39;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 8px 8px 8px 8px;
 }
 
 /** Ionic CSS Variables **/

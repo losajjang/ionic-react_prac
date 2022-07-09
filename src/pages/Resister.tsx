@@ -29,10 +29,8 @@ const arr = [
   { name: "Poe", desc: "New Ride" },
 ];
 
-const Home: React.FC = () => {
+const Resister: React.FC = () => {
   const [input, setInput] = useState<string>("");
-  const [number, setNumber] = useState<number>();
-  const [text, setText] = useState<string>("");
 
   useEffect(() => {
     console.log(input);
@@ -42,17 +40,12 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Best App Ever!</IonTitle>
+          <IonTitle>Example Page!</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
-        <IonButton routerLink="/login">Login</IonButton>
-        <IonButton routerLink="/resister" color="secondary">
-          Resister
-        </IonButton>
-      </IonContent>
+      <IonContent className="ion-padding">Hello example Page!</IonContent>
     </IonPage>
   );
 };
 
-export default Home;
+export default Resister;
