@@ -20,30 +20,49 @@ import ExploreContainer from "../components/ExploreContainer";
 import "./Home.css";
 import { atCircle, fingerPrint, star } from "ionicons/icons";
 import { KeyboardEvent, useEffect, useState } from "react";
-
-const arr = [
-  { name: "Finn", desc: "this guy rocks!" },
-  { name: "Han", desc: "Trust me, I am a programmer" },
-  { name: "Rey", desc: "I am done with it!" },
-  { name: "Luke", desc: "Your thoughts betray you" },
-  { name: "Poe", desc: "New Ride" },
-];
+import { Link } from "react-router-dom";
 
 const Resister: React.FC = () => {
-  const [input, setInput] = useState<string>("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [cpassword, setSPassword] = useState("");
 
-  useEffect(() => {
-    console.log(input);
-  }, [input]);
+  function resisterUser() {
+    console.log(`username: ${username}, password: ${password}, confirm Password: ${cpassword}`);
+  }
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Example Page!</IonTitle>
+          <IonTitle>Resister Page</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">Hello example Page!</IonContent>
+      <IonContent className="ion-padding">
+        <IonInput
+          value={username}
+          type="text"
+          placeholder="Username?"
+          onIonChange={(e: any) => setUsername(e.target.value)}
+        />
+        <IonInput
+          value={password}
+          type="password"
+          placeholder="Password?"
+          onIonChange={(e: any) => setPassword(e.target.value)}
+        />
+        <IonInput
+          value={cpassword}
+          type="password"
+          placeholder="Confirm Password?"
+          onIonChange={(e: any) => setSPassword(e.target.value)}
+        />
+        <IonButton onClick={resisterUser}>Resister</IonButton>
+
+        <p>
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
+      </IonContent>
     </IonPage>
   );
 };

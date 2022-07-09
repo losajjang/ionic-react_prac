@@ -20,20 +20,21 @@ import ExploreContainer from "../components/ExploreContainer";
 import "./Home.css";
 import { atCircle, fingerPrint, star } from "ionicons/icons";
 import { KeyboardEvent, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function loginUser() {
-    console.log(`username: ${username}, password: ${password} `);
+    console.log(`username: ${username}, password: ${password}`);
   }
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Example Page!</IonTitle>
+          <IonTitle>Login Page</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
@@ -50,6 +51,9 @@ const Login: React.FC = () => {
           onIonChange={(e: any) => setPassword(e.target.value)}
         />
         <IonButton onClick={loginUser}>Login</IonButton>
+        <p>
+          New here? <Link to="/resister">Resister</Link>
+        </p>
       </IonContent>
     </IonPage>
   );

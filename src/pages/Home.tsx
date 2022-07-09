@@ -21,23 +21,7 @@ import "./Home.css";
 import { atCircle, fingerPrint, star } from "ionicons/icons";
 import { KeyboardEvent, useEffect, useState } from "react";
 
-const arr = [
-  { name: "Finn", desc: "this guy rocks!" },
-  { name: "Han", desc: "Trust me, I am a programmer" },
-  { name: "Rey", desc: "I am done with it!" },
-  { name: "Luke", desc: "Your thoughts betray you" },
-  { name: "Poe", desc: "New Ride" },
-];
-
 const Home: React.FC = () => {
-  const [input, setInput] = useState<string>("");
-  const [number, setNumber] = useState<number>();
-  const [text, setText] = useState<string>("");
-
-  useEffect(() => {
-    console.log(input);
-  }, [input]);
-
   return (
     <IonPage>
       <IonHeader>
