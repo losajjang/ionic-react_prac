@@ -21,13 +21,15 @@ import "./Home.css";
 import { atCircle, fingerPrint, star } from "ionicons/icons";
 import { KeyboardEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { loginUser } from "../firebaseConfig";
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  function loginUser() {
-    console.log(`username: ${username}, password: ${password}`);
+  async function login() {
+    const res = await loginUser(username, password);
+    console.log(`${res ? "login success" : "login failed"}`);
   }
 
   return (
@@ -50,7 +52,7 @@ const Login: React.FC = () => {
           placeholder="Password?"
           onIonChange={(e: any) => setPassword(e.target.value)}
         />
-        <IonButton onClick={loginUser}>Login</IonButton>
+        <IonButton onClick={login}>Login</IonButton>
         <p>
           New here? <Link to="/resister">Resister</Link>
         </p>
